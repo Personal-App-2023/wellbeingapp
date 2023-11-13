@@ -1,0 +1,123 @@
+.header{
+    margin-top: 5%;
+    margin-left: 40%;
+    /*margin-right: 40%;*/
+    /*margin-bottom: 2%;*/
+}
+h6{
+    color: white;
+}
+label{
+    color: white;
+}
+.light{
+    /*background-color: #ebcfff;*/
+    background-color: ghostwhite;
+}
+.modal-header h6{
+    color: black;
+}
+.modal-body label{
+    color: black;
+}
+.new-div{
+    margin-bottom: 10%;
+}
+.new-form{
+    /*margin: 20px 20px 20px 20px;*/
+    margin:auto;
+    margin-bottom: 30%;
+    margin-top: 3%;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.type{
+    margin-right: 20px;
+}
+textarea{
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 0px 10px;
+    background-color: lightskyblue;
+}
+.add-btn{
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.emotion{
+    margin-right: 20px;
+}
+.percentlbl{
+    color: black;
+    margin-right: 10px;
+}
+.percent{
+    width: 70px;
+    padding: 5px 5px 5px 5px;
+    border-color: lightgray;
+    border-radius: 5%;
+    border-width: 0.5px;
+    margin-right: 20px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -goog-ms-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.message{
+    margin-left: 20px;
+    color: white;/*red*/
+}
+.confirm{
+    margin-left: 20px;
+    color: black;
+}
+.mymodal{
+    background-color: indigo;
+}
+/**large screen size**/
+@media (min-width: 800px) {
+    .small{
+        display: none;
+    }
+}
+/**small screen size**/
+@media (max-width: 800px) {
+    .large{
+        display: none !important;
+    }
+    .header{
+        margin-top: 5%;
+        /*margin-left: 30px;*/
+        margin-left: 20%;
+        margin-bottom: 4%;
+    }
+    .small{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+    .new-form{
+        /*margin: 20px 20px 20px 20px;*/
+        margin:auto;
+        margin-bottom: 30%;
+        margin-top: 7%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    textarea{
+        width: 500px;
+        height: 100px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 5px 0px;
+    }
+    .submit{
+        width: 80px;
+        height: 38px;
+        display: block;
+        margin: auto;
+    }
+  }

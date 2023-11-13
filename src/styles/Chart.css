@@ -1,0 +1,40 @@
+h2{
+    color: white;
+}
+.chart-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    height: 500px;
+    position: relative;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+.thougt-modal{
+    /*display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;*/
+    word-wrap:break-word; 
+    overflow-y: auto;
+    max-height: 500px;
+}
+table{
+    width: 100%;
+}
+td{
+    display: block;
+    background-color: ghostwhite;
+    padding: 10px 10px 10px 10px;
+    border-radius: 3%;
+    /*width: 90%;*/
+    /*max-width: 90% !important;*/
+    width: 99% !important;
+}
+span{
+    display:block;
+    width: 99%;
+    word-wrap:break-word;
+    text-align: left;
+}

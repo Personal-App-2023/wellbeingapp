@@ -1,0 +1,13 @@
+.container-inner {
+    background: transparent !important;
+}
+.logo{
+    height:170px;
+    width:200px;
+    /*mix-blend-mode: multiply;*/
+    /*opacity: 0.6;*/
+}
+.mynav{
+    background-color: rgb(46,0,79);
+    color: white;
+}

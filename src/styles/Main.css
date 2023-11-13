@@ -1,0 +1,40 @@
+.main{
+    display: flex;
+    justify-content: center;
+    margin: 5% 30% 10% 30%;
+    flex-direction: column;
+}
+h6{
+    color: white;
+}
+p{
+    color: white;
+}
+.content{
+    margin-top: 5px;
+}
+.navigate{
+    /*margin: 0px 20px 5px 0px*/
+    margin-left: 85%;
+    color: white;
+}
+.top{
+    margin-bottom: 10%;
+}
+.bottom{
+
+}
+/**small screen size**/
+@media (max-width: 800px) {
+    .main{
+        display: flex;
+        justify-content: center;
+        /*display: flex;
+        align-items: flex-end;*/
+        margin: 5% 7% 10% 7%;
+        flex-direction: column;
+    }
+    .navigate{
+        margin-left: 85%;
+    }
+}

@@ -1,0 +1,24 @@
+.navi{
+    color: white;
+    /*margin-left: 0px;*/
+    clear:left;
+    text-align: center;
+    margin:auto;
+    font-size: 14px;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+}
+/**large screen size**/
+@media (min-width: 800px) {
+    .small{
+        display: none !important;
+    }
+}
+/**small screen size**/
+@media (max-width: 800px) {
+    .large{
+        display: none !important;
+    }
+}
