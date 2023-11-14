@@ -13,13 +13,6 @@ tools {
 
   stages {
 
- stage('Install Dependencies') {
-      steps {
-
-        sh 'npm ci'
-      }
-    }
-
     stage('Build Project') {
       steps {
         // Build the Angular project
