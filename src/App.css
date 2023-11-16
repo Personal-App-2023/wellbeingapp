@@ -12,6 +12,13 @@
   margin-top: 10px;
   font-size: 12px;
 }
+.login-button{
+  background-color: blue;
+  color: white;
+  border-radius: 3%;
+  border-style: none;
+  padding: 5px 10px 5px 10px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
