@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 import "../styles/Chart.css";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import $ from 'jquery';
 
 function PieChart({ chartData }) {

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF,faInstagram,faXTwitter,faLinkedin } from '@fortawesome/free-brands-svg-icons' ;
 import {NavLink} from "react-router-dom";
 import "../styles/Footer.css";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export default function Footer(){
     return(
