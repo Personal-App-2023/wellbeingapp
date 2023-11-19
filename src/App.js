@@ -18,7 +18,7 @@ ReactGA.initialize('G-TWCHF5DQZ7');
 
 function App() {
   //const [ profile, setProfile ] = useState({});
-  const [ user, setUser ] = useState(null);
+  //const [ user, setUser ] = useState(null);
   const [error, setError] = useState("");
   const profile = useSelector((state) => state.theStore.value);
   const dispatch = useDispatch();
@@ -26,8 +26,38 @@ function App() {
   const login = useGoogleLogin({
     onSuccess: async (response) => {
       console.log('login.success',response);
-      setUser(response);
-
+      
+        //////////////////////////////////////////////////////////////////////////////
+        try {
+         //let res = await fetch('http://localhost:9096/api/user', {
+           let res = await fetch(`http://localhost:9096/userapp/auth`, {  
+             method: 'POST',
+             headers: {
+                //'Authorization': `Bearer ${response.access_token}`,
+               //'Content-Type': 'application/json',
+             },
+             body: response.access_token
+           });
+         let resJson = await res.json();
+         if (res.status === 200) {
+           //setMessage(null);
+           console.log('userprofile',resJson);
+           let user=resJson;
+           //xxxsetProfile({'id': userId, 'name': decoded.name, 'email':decoded.email});
+           //set as global variable in redux
+           dispatch(getProfile({'id': user.userId, 'name': user.name, 'email':user.email}));
+           console.log('global profile',profile);
+         } else {
+           //setMessage("Some error occured");
+           setError("Some error occured, please try again later.");
+         }
+       } catch (err) {
+         console.log(err);
+         setError("Some error occured, please try again later.");
+         //setMessage("Some error occured");
+       }       
+      
+   
     //let decoded = jwt_decode(response.credential);
     //console.log('decoded',decoded);
     ////////setProfile({'name': decoded.name, 'email':decoded.email});
@@ -67,41 +97,7 @@ function App() {
     flow: 'implicit'
   });
 
-  useEffect(
-    async () => {
-        if (user) {
-            
-         //////////////////////////////////////////////////////////////////////////////
-         try {
-          //let res = await fetch('http://localhost:9096/api/user', {
-            let response = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {  
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-              }
-            });
-          let resJson = await response.json();
-          if (response.status === 200) {
-            //setMessage(null);
-            console.log('userprofile',resJson);
-            let userId=resJson;
-            //xxxsetProfile({'id': userId, 'name': decoded.name, 'email':decoded.email});
-            //set as global variable in redux
-            dispatch(getProfile({'id': userId, 'name': '', 'email':''}));
-            console.log('global profile',profile);
-          } else {
-            //setMessage("Some error occured");
-            setError("Some error occured, please try again later.");
-          }
-        } catch (err) {
-          console.log(err);
-          setError("Some error occured, please try again later.");
-          //setMessage("Some error occured");
-        }       
-        }
-    },
-    [ user ]
-);
+  
 
   const responseMessage = async (response) => {
     
@@ -139,7 +135,7 @@ function App() {
           
           <button className="login-button" onClick={() => login()}>
             Sign in with Google 🚀{' '}
-          </button>;
+          </button>
           <p className='login-error'>{error}</p>
          </div>
          }
