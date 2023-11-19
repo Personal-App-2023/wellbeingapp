@@ -6,6 +6,8 @@ import "../styles/New.css";
 import { useSelector } from "react-redux";
 import ReactGA from 'react-ga4';
 
+ReactGA.send({ hitType: "pageview", page: "/new", title: "New Thought" });
+
 export default function New(){
   const [pthought, setPositiveThought] = useState("");
   const [nthought, setNegativeThought] = useState("");

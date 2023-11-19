@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import "../styles/Feedback.css";
 import ReactGA from 'react-ga4';
 
+ReactGA.send({ hitType: "pageview", page: "/feedback", title: "Feedback" });
+
 export default function Feedback(){
     const profile = useSelector((state) => state.theStore.value);
     const [message, setMessage] = useState("");

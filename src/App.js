@@ -15,7 +15,8 @@ import { getProfile } from "./components/store";
 import ReactGA from 'react-ga4';
 
 ReactGA.initialize('G-TWCHF5DQZ7');
-ReactGA.send("pageview");
+//ReactGA.send("pageview");
+ReactGA.send({ hitType: "pageview", page: "/", title: "Peaceful Mind App" });
 //ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
         //////////////////////////////////////////////////////////////////////////////
         try {
          //let res = await fetch('http://localhost:9096/api/user', {
-           let res = await fetch(`http://k8s-default-awsingre-23c3bc0850-121321573.us-east-2.elb.amazonaws.com/userapp/auth`, {  
+           let res = await fetch(`http://localhost:9096/userapp/auth`, {  
              method: 'POST',
              headers: {
                 //'Authorization': `Bearer ${response.access_token}`,
