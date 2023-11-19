@@ -4,7 +4,7 @@ import Dummy from "../images/dummy.png";
 import Emotions from "../components/Emotions";
 import "../styles/New.css";
 import { useSelector } from "react-redux";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export default function New(){
   const [pthought, setPositiveThought] = useState("");

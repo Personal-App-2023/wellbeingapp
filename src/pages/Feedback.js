@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 import {NavLink} from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../styles/Feedback.css";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export default function Feedback(){
     const profile = useSelector((state) => state.theStore.value);

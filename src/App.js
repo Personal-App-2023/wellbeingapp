@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React,{ useState, useEffect } from 'react';
-import {Route,Routes,NavLink} from "react-router-dom";
+import {Route,Routes,NavLink,useLocation} from "react-router-dom";
 import Main from "./pages/Main";
 import New from "./pages/New";
 import Report from "./pages/Report";
@@ -12,13 +12,16 @@ import { GoogleLogin,googleLogout, useGoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfile } from "./components/store";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 ReactGA.initialize('G-TWCHF5DQZ7');
+ReactGA.send("pageview");
+//ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   //const [ profile, setProfile ] = useState({});
   //const [ user, setUser ] = useState(null);
+  const location = useLocation();
   const [error, setError] = useState("");
   const profile = useSelector((state) => state.theStore.value);
   const dispatch = useDispatch();
@@ -30,7 +33,7 @@ function App() {
         //////////////////////////////////////////////////////////////////////////////
         try {
          //let res = await fetch('http://localhost:9096/api/user', {
-           let res = await fetch(`http://localhost:9096/userapp/auth`, {  
+           let res = await fetch(`http://k8s-default-awsingre-23c3bc0850-121321573.us-east-2.elb.amazonaws.com/userapp/auth`, {  
              method: 'POST',
              headers: {
                 //'Authorization': `Bearer ${response.access_token}`,
@@ -115,7 +118,12 @@ function App() {
         //setProfile({});
     };
     useEffect(() => {
-      ReactGA.pageview(window.location.pathname + window.location.search);
+      //ReactGA.pageview(window.location.pathname + window.location.search);
+      //ReactGA.send("pageview");
+      console.log("location",location.pathname);
+      ReactGA.send({ hitType: 'pageview', page: location.pathname }); 
+      //ReactGA.set({ page: location.pathname });
+      //ReactGA.pageview(location.pathname);
     }, []);
   return (
     
