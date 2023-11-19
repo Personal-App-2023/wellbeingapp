@@ -4,7 +4,9 @@ import PieChart from "../components/PieChart";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import { useSelector } from "react-redux";
+import ReactGA from 'react-ga4';
 
+ReactGA.send({ hitType: "pageview", page: "/report", title: "Report" });
 Chart.register(CategoryScale);
 
 export default function Report(){
