@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink,Link} from "react-router-dom";
 import Dummy from "../images/dummy.png";
 import Emotions from "../components/Emotions";
 import "../styles/New.css";
@@ -149,8 +149,8 @@ export default function New(){
                 setMessage("Missing required fields");
               else{
                 try {
-                  //let res = await fetch('http://localhost:9094/api/thought', {
-                  let res = await fetch('http://k8s-default-awsingre-23c3bc0850-121321573.us-east-2.elb.amazonaws.com/personal/thought', {
+                  let res = await fetch('http://localhost:9094/personal/thought', {
+                  //let res = await fetch('http://k8s-default-awsingre-23c3bc0850-121321573.us-east-2.elb.amazonaws.com/personal/thought', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
@@ -185,7 +185,7 @@ export default function New(){
                   let resJson = await res.json();
                   if (res.status === 200) {
                     setMessage(null);
-                    setConfirm("New insights created successfully");
+                    setConfirm("New insights created successfully. ");
                     //GA
                     ReactGA.event(
                       {category:"New", action:"SubmitSuccess", label:uitype}
@@ -209,8 +209,9 @@ export default function New(){
              }}>Submit</button>
              
              {message ? <div className="message"> <p>{message}</p> </div>: null}
-             {confirm ? <div className="confirm"> <p>{confirm}</p> </div>: null}
+             {confirm ? <div className="confirm"> <p>{confirm} </p> </div>: null}
           </form>
+          {confirm ? <div className="report-link"><Link className="navigate" to="/report">View_Monthly_Report</Link></div>:null}
           </div>
           <div className="modal fade" id="emotionsModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
