@@ -42,7 +42,7 @@ export default function Footer(){
       <div className="container text-center text-md-start mt-5">
         <div className="row mt-3">
           <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <h6>Wellbeing App</h6>
+            <h6>Peaceful Mind App</h6>
             <hr
                 className="mb-4 mt-0 d-inline-block mx-auto"
                 style={{width: 60+'px', backgroundColor: '#7c4dff', height: 2+'px'}}

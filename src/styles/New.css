@@ -14,6 +14,10 @@ label{
     /*background-color: #ebcfff;*/
     background-color: ghostwhite;
 }
+.navigate{
+    /*margin: 0px 20px 5px 0px*/
+    color: white;
+}
 .modal-header h6{
     color: black;
 }
@@ -119,5 +123,20 @@ textarea{
         height: 38px;
         display: block;
         margin: auto;
+    }
+    .emotion{
+        margin-right: 15px;
+    }
+    .percent{
+        width: 90px;
+        padding: 2px 2px 2px 2px;
+        border-color: lightgray;
+        border-radius: 5%;
+        border-width: 0.5px;
+        margin-right: 15px;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -goog-ms-box-shadow: none;
+        -webkit-box-shadow: none;
     }
   }

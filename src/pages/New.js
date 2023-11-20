@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink,Link} from "react-router-dom";
 import Dummy from "../images/dummy.png";
 import Emotions from "../components/Emotions";
 import "../styles/New.css";
@@ -185,7 +185,7 @@ export default function New(){
                   let resJson = await res.json();
                   if (res.status === 200) {
                     setMessage(null);
-                    setConfirm("New insights created successfully");
+                    setConfirm("New insights created successfully. ");
                     //GA
                     ReactGA.event(
                       {category:"New", action:"SubmitSuccess", label:uitype}
@@ -209,7 +209,7 @@ export default function New(){
              }}>Submit</button>
              
              {message ? <div className="message"> <p>{message}</p> </div>: null}
-             {confirm ? <div className="confirm"> <p>{confirm}</p> </div>: null}
+             {confirm ? <div className="confirm"> <p>{confirm} <Link className="navigate" to="/report">View Monthly Report</Link></p> </div>: null}
           </form>
           </div>
           <div className="modal fade" id="emotionsModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
