@@ -17,6 +17,12 @@ label{
 .navigate{
     /*margin: 0px 20px 5px 0px*/
     color: white;
+    text-align: center;
+}
+.report-link{
+    display: inline-block;
+    margin: 0px 40% 0px 40%;
+    text-align: center;
 }
 .modal-header h6{
     color: black;
@@ -117,6 +123,11 @@ textarea{
         height: 100px;
         padding: 0px 0px 0px 0px;
         margin: 0px 0px 5px 0px;
+    }
+    .report-link{
+        display: inline-block;
+        margin: auto;
+        text-align: center;
     }
     .submit{
         width: 80px;

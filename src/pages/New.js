@@ -209,8 +209,9 @@ export default function New(){
              }}>Submit</button>
              
              {message ? <div className="message"> <p>{message}</p> </div>: null}
-             {confirm ? <div className="confirm"> <p>{confirm} <Link className="navigate" to="/report">View Monthly Report</Link></p> </div>: null}
+             {confirm ? <div className="confirm"> <p>{confirm} </p> </div>: null}
           </form>
+          {confirm ? <div className="report-link"><Link className="navigate" to="/report">View_Monthly_Report</Link></div>:null}
           </div>
           <div className="modal fade" id="emotionsModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
