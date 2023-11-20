@@ -136,15 +136,15 @@ textarea{
         margin: auto;
     }
     .emotion{
-        margin-right: 15px;
+        margin-right: 10px;
     }
     .percent{
-        width: 90px;
+        width: 100px;
         padding: 2px 2px 2px 2px;
         border-color: lightgray;
         border-radius: 5%;
         border-width: 0.5px;
-        margin-right: 15px;
+        margin-right: 7px;
         box-shadow: none;
         -moz-box-shadow: none;
         -goog-ms-box-shadow: none;
