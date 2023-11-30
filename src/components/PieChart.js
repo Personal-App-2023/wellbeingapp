@@ -8,7 +8,50 @@ import $ from 'jquery';
 function PieChart({ chartData }) {
     const profile = useSelector((state) => state.theStore.value);
     const [emotion, setEmotion] = useState("");
+    const [quote, setQuote] = useState(null);
     const [thoughts, setThoughts] = useState([]);
+
+    React.useEffect(() => {
+      if(!quote)
+        getDailyQuote();
+    }, []);
+  
+    React.useEffect(() => {
+      if (quote) {
+        console.log(quote);
+      }
+    }, [quote]);
+
+    const getDailyQuote = async () => {
+          try {
+              //let res = await fetch(`https://quotes.rest/qod.json?category=inspire&api_key=Q3yDonTV1lfaFMXwKsu4BskSnQmypWzCFNqOxEz3`, {
+                let res= await fetch('https://api.quotable.io/random?tags=[Inspirational]', {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                  //'X-Theysaidso-Api-Secret': 'Q3yDonTV1lfaFMXwKsu4BskSnQmypWzCFNqOxEz3',
+                }
+              });
+              let resJson = await res.json();
+              if (res.status === 200) {
+                console.log("Loaded Quote");
+                console.log(resJson);
+                console.log(resJson.content);
+                setQuote(resJson.content);
+              } else {
+                console.log("Some error occured");
+                ReactGA.event(
+                  {category:"Chart", action:"DailyQuoteError"}
+                  );
+              }
+            } catch (err) {
+              console.log(err);
+              ReactGA.event(
+                {category:"Chart", action:"DailyQuoteError"}
+                );
+            }
+          
+      };
 
     const onClick = async (event,element) => {
         if(element.length > 0)
@@ -30,6 +73,7 @@ function PieChart({ chartData }) {
                   setThoughts(resJson);
                 } else {
                   console.log("Some error occured");
+                  console.log(res.status);
                   ReactGA.event(
                     {category:"Chart", action:"ViewEmotionError", label:tempemotion}
                     );
@@ -48,8 +92,10 @@ function PieChart({ chartData }) {
       };
   return (
     <>
-    <div className="chart-container" >
+    <div className="chart-container">
+      {quote?<p className="quote-div">Quote of the day: {quote}</p>:<></>}
       <h2 style={{ textAlign: "center" }}>Your monthly emotions</h2>
+      <div className="pie-div">
       <Pie
         data={chartData}
         width={50}
@@ -72,6 +118,7 @@ function PieChart({ chartData }) {
           }
         }}
       />
+      </div>
     </div>
     <div className="modal fade" id="thoughtsModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div className="modal-dialog">

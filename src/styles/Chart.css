@@ -1,16 +1,37 @@
-h2{
-    color: white;
+
+.quote-div{
+    margin-top: 5px;
+    text-align: center;
+    min-height: 0px;
+    text-overflow: ellipsis;
+    /*overflow: hidden;*/
+    /*flex: 0 1 auto; */
+    flex: 1; /*important*/
 }
+
 .chart-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 70%;
     height: 500px;
-    position: relative;
+    /*position: relative;*/
+    min-height: 0px;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 20px;
     margin-bottom: 10%;
+}
+h2{
+    color: white;
+    min-height: 0px;
+    margin-top: 20px;
+    /*flex:1 0 auto; */
+    flex: 1; /*important*/
+}
+.pie-div{
+    width: 100%;
+    flex: 5;
+    /*flex-grow: 5;*/
 }
 .thougt-modal{
     /*display: flex;
@@ -37,4 +58,28 @@ span{
     width: 99%;
     word-wrap:break-word;
     text-align: left;
+}
+/**small screen size**/
+@media (max-width: 800px) {
+    
+    h2{
+        color: white;
+        min-height: 0px;
+        margin-top: 20px;
+        flex: 2; /*important*/
+        flex-grow: 2; /*important*/
+    }
+    .quote-div{
+        margin-top: 20px;
+        text-align: center;
+        min-height: 0px;
+        text-overflow: ellipsis;
+        /*overflow: hidden;flex: 0 1 50%;*/
+        flex: 3; /*important*/
+        flex-grow: 3; /*important*/
+    }
+    .pie-div{
+        flex: 5; /*important*/
+        width: 100%;
+    }
 }
