@@ -92,7 +92,7 @@ function PieChart({ chartData }) {
   return (
     <>
     <div className="chart-container" >
-      {quote?<p className="quote-div">Quote of the day: {quote}</p>:<></>}
+      {quote?<div className="quote-wrapper"><p className="quote-div">Quote of the day: {quote}</p></div>:<></>}
       <h2>Your monthly emotions</h2>
       <div className="pie-div">
       <Pie

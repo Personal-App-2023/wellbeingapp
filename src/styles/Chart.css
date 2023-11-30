@@ -1,13 +1,17 @@
 .quote-div{
     margin-top: 5px;
     text-align: center;
-    min-height: 0px;
+    min-height: 0;
     text-overflow: ellipsis;
     /*overflow: hidden;*/
     /*flex: 0 1 auto; */
-    flex: 1; /*important*/
+    flex: 1;
 }
-
+.quote-wrapper{
+    min-height: 0;
+    flex: 1; /*important*/
+    display: flex;
+}
 .chart-container{
     display: flex;
     justify-content: center;
@@ -15,7 +19,6 @@
     width: 70%;
     height: 500px;
     /*position: relative;*/
-    min-height: 0px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10%;
@@ -26,7 +29,6 @@ h2{
     margin-top: 20px;
     /*flex:1 0 auto; */
     flex: 1; /*important*/
-    text-align: center;
 }
 .pie-div{
     width: 100%;
@@ -66,18 +68,22 @@ span{
         color: white;
         min-height: 0px;
         margin-top: 20px;
-        flex: 2; /*important*/
+        flex: auto; /*important*/
         flex-grow: 2; /*important*/
-        text-align: center;
+    }
+    .quote-wrapper{
+        min-height: 0;
+        /*overflow: hidden;flex: 0 1 50%;*/
+        flex: auto; /*important*/
+        display: flex;
     }
     .quote-div{
         margin-top: 20px;
         text-align: center;
-        min-height: 0px;
+        min-height: 0;
         text-overflow: ellipsis;
-        /*overflow: hidden;flex: 0 1 50%;*/
-        flex: 3; /*important*/
-        flex-grow: 3; /*important*/
+        overflow: auto;
+        flex: 1;
     }
     .pie-div{
         flex: 5; /*important*/
