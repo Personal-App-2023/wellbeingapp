@@ -29,6 +29,7 @@ h2{
     margin-top: 20px;
     /*flex:1 0 auto; */
     flex: 1; /*important*/
+    text-align: center;
 }
 .pie-div{
     width: 100%;
@@ -70,6 +71,7 @@ span{
         margin-top: 20px;
         flex: auto; /*important*/
         flex-grow: 2; /*important*/
+        text-align: center;
     }
     .quote-wrapper{
         min-height: 0;
