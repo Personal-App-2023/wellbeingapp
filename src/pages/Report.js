@@ -27,8 +27,8 @@ export default function Report(){
         ]
       });
       const fetchUserData = () => {
-        //fetch(`http://localhost:9094/api/emotions/${profile.id}`)
-        fetch(`http://k8s-default-awsingre-23c3bc0850-121321573.us-east-2.elb.amazonaws.com/personal/emotions/${profile.id}`)
+        fetch(`http://localhost:9094/personal/emotions/${profile.id}`)
+        //fetch(`http://k8s-default-awsingre-23c3bc0850-121321573.us-east-2.elb.amazonaws.com/personal/emotions/${profile.id}`)
           .then(response => {
             if (response.ok) {
                 console.log('response',response);
